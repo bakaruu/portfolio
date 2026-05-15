@@ -1,0 +1,315 @@
+.wrapper {
+  min-height: 100vh;
+  scroll-margin-top: 64px;
+  position: relative;
+  z-index: 1;
+}
+
+.about {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 48px 48px 80px;
+  display: flex;
+  gap: 64px;
+  align-items: flex-start;
+}
+
+/* ── LEFT ── */
+
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.prompt {
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+:global(.light) .prompt {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.headline {
+  font-family: monospace;
+  font-size: clamp(22px, 2.6vw, 34px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.headlineSub {
+  font-size: clamp(13px, 1.4vw, 18px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.05em;
+}
+
+:global(.light) .headlineSub {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+:global(.light) .headline {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.highlight {
+  color: #60a5fa;
+}
+
+.junior {
+  position: relative;
+  cursor: default;
+  display: inline-block;
+}
+
+.juniorTooltip {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 0;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: none;
+  color: #60a5fa;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s, transform 0.2s;
+  pointer-events: none;
+}
+
+.junior:hover .juniorTooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.code {
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 2px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 16px;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+:global(.light) .code {
+  color: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.03);
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.code a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.code strong {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+:global(.light) .code strong {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.comment {
+  font-family: monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.12);
+  letter-spacing: 0.05em;
+  cursor: default;
+  transition: color 0.3s;
+}
+
+.comment:hover {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+:global(.light) .comment {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+:global(.light) .comment:hover {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* ── RIGHT ── */
+
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+:global(.light) .grid {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: default;
+  position: relative;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.2s;
+  overflow: hidden;
+}
+
+.card:nth-child(even) {
+  border-right: none;
+}
+
+.card:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+.card:hover {
+  border-color: rgba(96, 165, 250, 0.5);
+  background: rgba(96, 165, 250, 0.04);
+  box-shadow: 0 0 12px rgba(96, 165, 250, 0.15);
+  outline: 1px solid rgba(96, 165, 250, 0.5);
+}
+
+:global(.light) .card {
+  border-right-color: rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+:global(.light) .card:hover {
+  background: rgba(96, 165, 250, 0.04);
+  box-shadow: 0 0 12px rgba(96, 165, 250, 0.15);
+}
+
+.cardValue {
+  font-family: monospace;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #60a5fa;
+  line-height: 1;
+}
+
+.cardLabel {
+  font-family: monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+:global(.light) .cardLabel {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.cardEaster {
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  font-family: monospace;
+  font-size: 11px;
+  color: transparent;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.card:hover .cardEaster {
+  color: rgba(96, 165, 250, 0.75);
+}
+
+.secretWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 0;
+  cursor: default;
+}
+
+.secretGif {
+  width: 160px;
+  opacity: 0.05;
+  transition: opacity 0.4s;
+}
+
+.secretWrapper:hover .secretGif {
+  opacity: 0.75;
+}
+
+.secretWrapper:hover .secretBig {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+:global(.light) .secretWrapper:hover .secretGif {
+  opacity: 0.75;
+}
+
+.secretBig {
+  font-family: monospace;
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.04);
+  margin: 0;
+  transition: color 0.4s;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.secretBig:hover {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+:global(.light) .secretBig {
+  color: rgba(0, 0, 0, 0.04);
+}
+
+:global(.light) .secretBig:hover {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+/* ── RESPONSIVE ── */
+
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    padding: 80px 32px;
+    gap: 48px;
+  }
+
+  .grid {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 64px 20px;
+  }
+
+  .headline {
+    font-size: clamp(22px, 7vw, 30px);
+  }
+}

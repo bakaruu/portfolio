@@ -1,0 +1,248 @@
+.wrapper {
+  scroll-margin-top: 64px;
+  min-height: calc(100vh - 64px);
+  position: relative;
+  z-index: 1;
+}
+
+.inner {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 48px 48px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ── HEADER ── */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prompt {
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+:global(.light) .prompt {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.title {
+  font-family: monospace;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+:global(.light) .title {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.counter {
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+  align-self: flex-end;
+  margin-top: -40px;
+}
+
+:global(.light) .counter {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+/* ── GRID ── */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ── CARD ── */
+
+.card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.card:hover {
+  border-color: rgba(96, 165, 250, 0.5);
+  background: rgba(96, 165, 250, 0.04);
+  box-shadow: 0 0 12px rgba(96, 165, 250, 0.15);
+}
+
+:global(.light) .card {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+:global(.light) .card:hover {
+  border-color: rgba(96, 165, 250, 0.5);
+  background: rgba(96, 165, 250, 0.04);
+  box-shadow: 0 0 12px rgba(96, 165, 250, 0.15);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.proc {
+  font-family: monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+:global(.light) .proc {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+:global(.light) .status {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #60a5fa;
+  box-shadow: 0 0 6px #60a5fa;
+}
+
+.status_wip .dot   { background: #f59e0b; box-shadow: 0 0 6px #f59e0b; }
+.status_private .dot { background: rgba(255,255,255,0.2); box-shadow: none; }
+
+.name {
+  font-family: monospace;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 1.2;
+}
+
+:global(.light) .name {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.description {
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+}
+
+:global(.light) .description {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.35);
+}
+
+:global(.light) .tag {
+  border-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.highlight {
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  color: #60a5fa;
+}
+
+.link {
+  font-family: monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+:global(.light) .link {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+:global(.light) .link:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* ── RESPONSIVE ── */
+
+@media (max-width: 768px) {
+  .inner {
+    padding: 48px 32px 64px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .counter {
+    align-self: flex-start;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .inner {
+    padding: 48px 20px 64px;
+  }
+}
