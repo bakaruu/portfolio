@@ -8,7 +8,7 @@ const projects = [
     description: "API REST de gestión de usuarios con autenticación JWT, control de roles y navegación HATEOAS. Documentada con OpenAPI 3, PKs en UUID y manejo global de excepciones. Frontend en Angular.",
     tags: ["Java 21", "Spring Boot", "Spring Security", "JPA", "MySQL", "Docker"],
     highlight: "REST + JWT",
-    github: "#",
+    github: "https://github.com/bakaruu/user-management-frontend",
   },
   {
     proc: "PROC/02",
@@ -17,7 +17,7 @@ const projects = [
     description: "E-commerce distribuido con microservicios Spring Boot. Comunicación asíncrona entre servicios con Kafka, cache Redis para rendimiento y pagos Stripe procesados mediante webhooks.",
     tags: ["Microservices", "Kafka", "Redis", "Stripe", "Angular", "Jib"],
     highlight: "MICROSERVICES",
-    github: "#",
+    github: "https://github.com/bakaruu/skate-shop",
   },
   {
     proc: "PROC/03",
@@ -49,7 +49,7 @@ export default function Work() {
         </div>
 
         <div className={styles.grid}>
-          {projects.map(({ proc, status, name, description, tags, highlight, github }) => (
+          {projects.map(({ proc, status, name, description, highlight, github }) => (
             <div key={name} className={styles.card}>
               <div className={styles.cardHeader}>
                 <span className={styles.proc}>{proc}</span>
