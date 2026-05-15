@@ -1,10 +1,10 @@
 import styles from "./Contact.module.css";
 
 const info = [
-  { label: "email",    value: "hola@bakaru.dev",          href: "mailto:hola@bakaru.dev" },
+  { label: "email",    value: "arucastro@bakaru.dev",          href: "mailto:hola@bakaru.dev" },
   { label: "github",   value: "github.com/bakaruu",        href: "https://github.com/bakaruu" },
   { label: "linkedin", value: "linkedin.com/in/bakaru",    href: "https://linkedin.com/in/bakaru" },
-  { label: "location", value: "Spain · Remote · UTC+1",    href: null },
+  { label: "location", value: "Spain (open to relocation) · Amsterdam · Zürich · Hamburg", href: null },
 ];
 
 export default function Contact() {
